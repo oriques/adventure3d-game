@@ -53,6 +53,15 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeWeapon3"",
+                    ""type"": ""Button"",
+                    ""id"": ""f401ff7a-6125-473b-b27f-6885da124da2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +97,17 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""ChangeWeapon2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd47a04f-cb5e-4793-bd3d-444bce40b8b7"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeWeapon3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -99,6 +119,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
         m_Gameplay_ChangeWeapon1 = m_Gameplay.FindAction("ChangeWeapon1", throwIfNotFound: true);
         m_Gameplay_ChangeWeapon2 = m_Gameplay.FindAction("ChangeWeapon2", throwIfNotFound: true);
+        m_Gameplay_ChangeWeapon3 = m_Gameplay.FindAction("ChangeWeapon3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,6 +182,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Shoot;
     private readonly InputAction m_Gameplay_ChangeWeapon1;
     private readonly InputAction m_Gameplay_ChangeWeapon2;
+    private readonly InputAction m_Gameplay_ChangeWeapon3;
     public struct GameplayActions
     {
         private @Inputs m_Wrapper;
@@ -168,6 +190,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
         public InputAction @ChangeWeapon1 => m_Wrapper.m_Gameplay_ChangeWeapon1;
         public InputAction @ChangeWeapon2 => m_Wrapper.m_Gameplay_ChangeWeapon2;
+        public InputAction @ChangeWeapon3 => m_Wrapper.m_Gameplay_ChangeWeapon3;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -186,6 +209,9 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @ChangeWeapon2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnChangeWeapon2;
                 @ChangeWeapon2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnChangeWeapon2;
                 @ChangeWeapon2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnChangeWeapon2;
+                @ChangeWeapon3.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnChangeWeapon3;
+                @ChangeWeapon3.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnChangeWeapon3;
+                @ChangeWeapon3.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnChangeWeapon3;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -199,6 +225,9 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @ChangeWeapon2.started += instance.OnChangeWeapon2;
                 @ChangeWeapon2.performed += instance.OnChangeWeapon2;
                 @ChangeWeapon2.canceled += instance.OnChangeWeapon2;
+                @ChangeWeapon3.started += instance.OnChangeWeapon3;
+                @ChangeWeapon3.performed += instance.OnChangeWeapon3;
+                @ChangeWeapon3.canceled += instance.OnChangeWeapon3;
             }
         }
     }
@@ -208,5 +237,6 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnChangeWeapon1(InputAction.CallbackContext context);
         void OnChangeWeapon2(InputAction.CallbackContext context);
+        void OnChangeWeapon3(InputAction.CallbackContext context);
     }
 }

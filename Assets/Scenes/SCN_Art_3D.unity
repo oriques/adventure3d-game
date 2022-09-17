@@ -10499,7 +10499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2457c56bfca134042aaccc10ec3ce2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunBase: {fileID: 145333043932789401, guid: 78f5e0ffb60aca94eaaed65b60ab40ed, type: 3}
+  gunBase: {fileID: 7631714180883480102, guid: 8f0a807adca87914e84313854be72daa, type: 3}
+  gunAngle: {fileID: 4540113964012296953, guid: f07e8c7cb26fb594e975cfc738d6baeb, type: 3}
+  gunLimit: {fileID: 145333043932789401, guid: 78f5e0ffb60aca94eaaed65b60ab40ed, type: 3}
   gunPosition: {fileID: 725184451}
 --- !u!1001 &1687589338
 PrefabInstance:
@@ -12290,7 +12292,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7758621, y: 1}
+    m_SensorSize: {x: 1.7759197, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
