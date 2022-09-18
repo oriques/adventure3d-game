@@ -8,6 +8,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     public GunBase gunBase;
     public GunBase gunAngle;
     public GunBase gunLimit;
+    public GunBase gunBibBig;
     public Transform gunPosition;
    
     private GunBase _currentGun;
@@ -52,6 +53,6 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     }
     private void ChangeGun3()
     {
-        _currentGun = Instantiate(gunBase, gunPosition);
+        _currentGun = Instantiate(gunBibBig, gunPosition);
     }
 }
