@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PlayerAbilityShoot : PlayerAbilityBase
 {   
@@ -45,14 +46,31 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     }
     private void ChangeGun1()
     {
+        if (_currentGun != null)
+        {
+            Destroy(GameObject.FindWithTag("Gun"));
+        }
         _currentGun = Instantiate(gunLimit, gunPosition);
     }
+
     private void ChangeGun2()
     {
+
+        if (_currentGun != null)
+        {
+            Destroy(GameObject.FindWithTag("Gun"));
+        }
         _currentGun = Instantiate(gunAngle, gunPosition);
+        
     }
     private void ChangeGun3()
     {
+        if (_currentGun != null)
+        {
+            Destroy(GameObject.FindWithTag("Gun"));
+        }
         _currentGun = Instantiate(gunBibBig, gunPosition);
+
+      
     }
 }
