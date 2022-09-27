@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     public Animator animator;
 
@@ -18,6 +18,21 @@ public class Player : MonoBehaviour
     public KeyCode keyJump = KeyCode.Space;
 
     private float vSpeed = 0f;
+
+    [Header("Flash")]
+    public List<FlashColor> flashColors;
+
+    #region LIFE
+    public void Damage(float damage)
+    {
+        flashColors.ForEach(i => i.Flash());
+    }
+
+    public void Damage(float damage, Vector3 dir)
+    {
+        
+    }
+    #endregion
 
     void Update()
     {

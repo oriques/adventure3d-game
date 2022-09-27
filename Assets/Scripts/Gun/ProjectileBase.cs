@@ -9,11 +9,12 @@ public class ProjectileBase : MonoBehaviour
     public int damageAmount = 1;
     public float speedBullet = 50f;
 
+    public List<string> tagsToHit;
+
     private void Awake()
     {
         Destroy(gameObject, timeToDestroy);
     }
-
 
 
     private void Update()
@@ -21,13 +22,31 @@ public class ProjectileBase : MonoBehaviour
         transform.Translate(Vector3.forward * speedBullet * Time.deltaTime);
     }
 
-    private void OnCollisionEnter (Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        var damageable = collision.transform.GetComponent<IDamageable>();
+        foreach(var tag in tagsToHit)
+        {
+            if(collision.transform.tag == tag)
+            {
 
-        if (damageable != null) damageable.Damage(damageAmount);
+                var damageable = collision.transform.GetComponent<IDamageable>();
+
+                if (damageable != null)
+                {
+
+                    Vector3 dir = collision.transform.position - transform.position;
+                    dir = -dir.normalized;
+                    dir.y = 0;
+
+                    damageable.Damage(damageAmount,dir);
+                  
+                }
+                break;
+            }
+        }
+
+        Destroy(gameObject);
     }
-
 }
-    
-   
+
+

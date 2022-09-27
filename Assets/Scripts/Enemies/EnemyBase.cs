@@ -60,7 +60,7 @@ namespace Enemy
             if (flashColor != null) flashColor.Flash();
             if (particleSystemEnemy != null) particleSystemEnemy.Emit(15);
 
-
+            transform.position -= transform.forward;
             _currentLife -= f;
 
             if(_currentLife <= 0)
@@ -91,11 +91,25 @@ namespace Enemy
                 OnDamage(5f);
             }
         }
-
         public void Damage(float damage)
         {
             Debug.Log("Damage");
             OnDamage(damage);
+        }
+        public void Damage(float damage, Vector3 dir)
+        {
+            OnDamage(damage);
+            transform.DOMove(transform.position - dir, 1f);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Player p = collision.transform.GetComponent<Player>();
+            
+            if (p !=null)
+            {
+                p.Damage(1);
+            }
         }
     }
 }

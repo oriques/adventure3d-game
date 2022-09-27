@@ -4828,7 +4828,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 99c736be1505a1946913e4a44105a8ce, type: 2}
+  - {fileID: 2100000, guid: 0a5e050cb4f28334f82f0b265c8c1c20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4891,9 +4891,10 @@ GameObject:
   - component: {fileID: 1100572222060562733}
   - component: {fileID: 1100572222060562735}
   - component: {fileID: 1100572222060562720}
+  - component: {fileID: 39165415641575650}
   m_Layer: 0
   m_Name: Enemy_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4947,10 +4948,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.5096588
-  m_Height: 4.1763167
+  m_Radius: 2.8616028
+  m_Height: 9.684809
   m_Direction: 1
-  m_Center: {x: 0.20375061, y: 1.8383834, z: 0.062387466}
+  m_Center: {x: 0.42544556, y: 3.015355, z: 0.062387466}
 --- !u!114 &1100572222060562720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4973,6 +4974,22 @@ MonoBehaviour:
     trigger: Attack
   - animationType: 4
     trigger: Death
+--- !u!54 &39165415641575650
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100572222060562732}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1100572222508918471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4983,7 +5000,7 @@ PrefabInstance:
     - target: {fileID: 6983442274928476050, guid: 86dc2d7519f0fa047a4a9adbc81a8da7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 0a5e050cb4f28334f82f0b265c8c1c20, type: 2}
     - target: {fileID: 8115776127002297597, guid: 86dc2d7519f0fa047a4a9adbc81a8da7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5074,6 +5091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 8046858471217355093}
+  skinnedMeshRenderer: {fileID: 0}
   color: {r: 0.735849, g: 0.35056958, b: 0.35056958, a: 1}
   duration: 0.1
 --- !u!4 &9216339532882846266 stripped
