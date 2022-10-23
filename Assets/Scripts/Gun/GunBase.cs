@@ -9,7 +9,9 @@ public class GunBase : MonoBehaviour
     public Transform positionToShoot;
     public float timeBetweenShoot = .3f;
     public float speed = 50f;
-    
+
+    public List<string> tagsToIgnore = new List<string>();
+
 
     private Coroutine _currentCoroutine;
 
@@ -29,6 +31,7 @@ public class GunBase : MonoBehaviour
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speedBullet = speed;
+        projectile.tagsToIgnore.AddRange(tagsToIgnore);
     }
 
 

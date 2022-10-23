@@ -12,6 +12,7 @@ namespace Enemy
         {
             base.Init();
 
+            gunBase.tagsToIgnore.Add(gameObject.tag);
             gunBase.StartShoot();
         }
     }

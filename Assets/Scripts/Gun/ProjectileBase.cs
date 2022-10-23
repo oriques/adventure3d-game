@@ -11,6 +11,8 @@ public class ProjectileBase : MonoBehaviour
 
     public List<string> tagsToHit;
 
+    public List<string> tagsToIgnore = new List<string>();
+
     private void Awake()
     {
         Destroy(gameObject, timeToDestroy);
@@ -24,9 +26,9 @@ public class ProjectileBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        foreach(var tag in tagsToHit)
+        foreach(var t in tagsToHit)
         {
-            if(collision.transform.tag == tag)
+            if(collision.transform.tag == t)
             {
 
                 var damageable = collision.transform.GetComponent<IDamageable>();
@@ -45,7 +47,13 @@ public class ProjectileBase : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        if (!tagsToIgnore.Contains(collision.gameObject.tag))
+        {
+
+            Destroy(gameObject);
+
+        }
+
     }
 }
 

@@ -148,6 +148,8 @@ MonoBehaviour:
   speedBullet: 50
   tagsToHit:
   - Player
+  tagsToIgnore:
+  - Enemy
 --- !u!54 &4922678944436279504
 Rigidbody:
   m_ObjectHideFlags: 0

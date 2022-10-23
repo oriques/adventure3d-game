@@ -101,6 +101,8 @@ MonoBehaviour:
   positionToShoot: {fileID: 4540113964968048299}
   timeBetweenShoot: 0.3
   speed: 50
+  tagsToIgnore:
+  - 
 --- !u!1 &4540113964968048292
 GameObject:
   m_ObjectHideFlags: 0
