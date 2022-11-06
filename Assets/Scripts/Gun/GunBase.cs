@@ -32,6 +32,8 @@ public class GunBase : MonoBehaviour
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speedBullet = speed;
         projectile.tagsToIgnore.AddRange(tagsToIgnore);
+
+       
     }
 
 
