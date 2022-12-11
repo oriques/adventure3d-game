@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ecco.Core.Singleton;
+using Cloth;
 
 public class Player : Singleton<Player>
 { 
@@ -28,6 +29,9 @@ public class Player : Singleton<Player>
     [Header("Life")]
     public HealthBase healthBase;
     public float timeToRevive = 7f;
+
+    [Space]
+    [SerializeField]private ClothChanger _clothChanger;
 
     private bool _alive = true;
 
@@ -131,4 +135,30 @@ public class Player : Singleton<Player>
             transform.position = CheckPointManager.Instance.GetPositionFromLastCheckPoint();
         }
     }
-}
+
+    public void ChangeSpeed(float speed, float duration)
+    {
+        StartCoroutine(ChangeSpeedCoroutine(speed, duration)); 
+    }
+
+    IEnumerator ChangeSpeedCoroutine(float localSpeed, float duration)
+    { 
+        var defaultspeed = speed;
+        speed = localSpeed;
+        yield return new WaitForSeconds(duration);
+        speed = defaultspeed;
+    }
+
+    public void ChangeTexture(ClothSetup setup, float duration )
+    {
+        StartCoroutine(ChangeTextureCoroutine(setup, duration));
+
+    }
+    IEnumerator ChangeTextureCoroutine(ClothSetup setup, float duration)
+    {
+        _clothChanger.ChangeTexture(setup);
+        yield return new WaitForSeconds(duration);
+        _clothChanger.ResetTexture();
+    }
+
+} 
