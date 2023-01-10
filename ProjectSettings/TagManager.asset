@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Environment
   - Magnetic
+  - Ground
   layers:
   - Default
   - TransparentFX

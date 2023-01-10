@@ -101,7 +101,11 @@ MonoBehaviour:
   positionToShoot: {fileID: 4540113964968048299}
   timeBetweenShoot: 0.3
   speed: 25
-  uIGunUpdaters: []
+  tagsToIgnore:
+  - Player
+  - Magnetic
+  - Environment
+  uiFillUpdater: []
   maxShoot: 1
   timeToRecharge: 3
   amountPerShoot: 1
