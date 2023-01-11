@@ -3852,22 +3852,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1996316499}
     m_Modifications:
-    - target: {fileID: 1743117819293871633, guid: ba37e1a7a030b9c4ea3e27f14705b0e0, type: 3}
-      propertyPath: m_text
-      value: New Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743117819293871633, guid: ba37e1a7a030b9c4ea3e27f14705b0e0, type: 3}
-      propertyPath: m_fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743117819293871633, guid: ba37e1a7a030b9c4ea3e27f14705b0e0, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743117819293871633, guid: ba37e1a7a030b9c4ea3e27f14705b0e0, type: 3}
-      propertyPath: m_fontSizeMin
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4803771133344154527, guid: ba37e1a7a030b9c4ea3e27f14705b0e0, type: 3}
       propertyPath: m_Name
       value: PFB_Button_Play

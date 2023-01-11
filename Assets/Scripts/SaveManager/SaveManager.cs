@@ -104,6 +104,14 @@ public class SaveManager : Singleton<SaveManager>
     {
         SaveLastLevel(1);
     }
+
+    public void DeleteSaveFile()
+    {
+        if(File.Exists(_path))
+        {
+            File.Delete(_path);
+        }
+    }
 }
 
 [System.Serializable]
@@ -112,6 +120,6 @@ public class SaveSetup
     public int lastLevel;
     public float coins;
     public float health;
-    public float lastcheckpoint;
+    public int lastcheckpoint = -1;
     public string playerName;
 }

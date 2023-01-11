@@ -9,6 +9,25 @@ public class CheckPointManager : Singleton<CheckPointManager>
 
     public List<CheckPointBase> checkpoints;
 
+    private void Start()
+    {
+        LoadCheckPointFromSetup();
+    }
+
+    private void LoadCheckPointFromSetup()
+    {
+        if(SaveManager.Instance.Setup != null)
+        {
+            if(SaveManager.Instance.Setup.lastcheckpoint > -1)
+            {
+                SaveCheckPoint(SaveManager.Instance.Setup.lastcheckpoint);
+                Player.Instance.charaterController.enabled = false;
+                Player.Instance.transform.position = GetPositionFromLastCheckPoint();
+                Player.Instance.charaterController.enabled = true;
+            }
+        }
+    }
+
     public bool HasCheckPoint()
     {
         return lastCheckPointKey > 0;
