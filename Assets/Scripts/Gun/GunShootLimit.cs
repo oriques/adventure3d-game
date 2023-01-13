@@ -7,6 +7,7 @@ public class GunShootLimit : GunBase
 {
     public List<UIFillUpdater> uiFillUpdater;
 
+    public SFXType sfxType;
     public float maxShoot = 5f;
     public float timeToRecharge = 1f;
 
@@ -31,9 +32,15 @@ public class GunShootLimit : GunBase
                 CheckRecharge();
                 UpdateUI();
                 yield return new WaitForSeconds(timeBetweenShoot);
+                PlaySFX();
             }
 
         }
+    }
+
+    private void PlaySFX()
+    {
+        SFXPool.Instance.Play(sfxType);
     }
 
     private void CheckRecharge()

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using DG.Tweening;
 
 public class PlayerAbilityShoot : PlayerAbilityBase
-{   
+{
     public GunBase gunBase;
     public GunBase gunAngle;
     public GunBase gunLimit;
@@ -34,6 +34,8 @@ public class PlayerAbilityShoot : PlayerAbilityBase
         _currentGun = Instantiate(gunBase, gunPosition);
         _currentGun.transform.localPosition = _currentGun.transform.localEulerAngles = Vector3.zero;
     }
+
+  
 
     private void StartShoot()
     {
