@@ -49,7 +49,10 @@ public enum SFXType
     NONE,
     TYPE_01,
     TYPE_02,
-    TYPE_03
+    TYPE_03,
+    TYPE_04,
+    TYPE_05,
+    TYPE_06
 }
 [System.Serializable]
 public class SFXSetup

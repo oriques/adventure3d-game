@@ -10,7 +10,7 @@ namespace Enemy
 {
     public class EnemyBase : MonoBehaviour, IDamageable 
     {
-
+        public SFXType sfxType;
         public Collider colliderEnemy;
         public FlashColor flashColor;
         public ParticleSystem particleSystemEnemy;
@@ -29,6 +29,7 @@ namespace Enemy
         public float startAnimationDuration = .2f;
         public Ease startAnimationEase = Ease.OutElastic;
         public bool startWithBornAnimation = true;
+
 
         [Header("Events")]
         public UnityEvent onKillEvent;
@@ -54,8 +55,9 @@ namespace Enemy
         {
             ResetLife();
             if(startWithBornAnimation)
-                BornAnimation();
+            BornAnimation();
         }
+
         protected virtual void Kill()
         {
             OnKill();
@@ -67,6 +69,7 @@ namespace Enemy
             Destroy(gameObject, timeToDestroy);
             PlayAnimationByTrigger(AnimationType.DEATH);
             onKillEvent?.Invoke();
+           
         }
 
         public void OnDamage (float f)
@@ -80,7 +83,13 @@ namespace Enemy
             if(_currentLife <= 0)
             {
                 Kill();
+                PlaySFX();
             }
+        }
+
+        private void PlaySFX()
+        {
+            SFXPool.Instance.Play(sfxType);
         }
 
         #region ANIMATION

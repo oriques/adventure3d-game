@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8621781822503703140}
   m_Layer: 0
   m_Name: DestructableItem
-  m_TagString: Environment
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8621781822503703136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 409.6463, y: -8.48, z: 16.612947}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 478277431555977322}
@@ -55,6 +55,7 @@ MonoBehaviour:
   dropCoinsAmount: 3
   coinPrefab: {fileID: 9060068114717707273, guid: e2ba76c7ba64a1641900cb875b1be815, type: 3}
   dropPosition: {fileID: 8621781823584209479}
+  sfxType: 2
 --- !u!114 &8621781822503703143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +85,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.467743, y: 10.5347, z: 3.220168}
-  m_Center: {x: -0.03831482, y: 4.76735, z: -0.06335592}
+  m_Center: {x: 0.03831482, y: 4.76735, z: 0.06335592}
 --- !u!1 &8621781823584209472
 GameObject:
   m_ObjectHideFlags: 0

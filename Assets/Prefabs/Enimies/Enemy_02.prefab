@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4389244680333353342
 Transform:
   m_ObjectHideFlags: 0
@@ -49,10 +49,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.8616028
-  m_Height: 9.684809
+  m_Radius: 2.51
+  m_Height: 10.08
   m_Direction: 1
-  m_Center: {x: 0.42544556, y: 3.015355, z: 0.062387466}
+  m_Center: {x: -0.37, y: 3.015355, z: 0.062387466}
 --- !u!114 &4389244680333353328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,17 +103,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a70ad58308a7d049b682735929e4c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxType: 4
   colliderEnemy: {fileID: 4389244680333353343}
   flashColor: {fileID: 4389244680465514147}
   particleSystemEnemy: {fileID: 4389244681982779817}
   startLife: 10
-  lookAtPlayer: 0
+  lookAtPlayer: 1
   timeToDestroy: 3
   _currentLife: 0
   _animationBase: {fileID: 4389244680333353328}
   startAnimationDuration: 0.2
   startAnimationEase: 24
   startWithBornAnimation: 1
+  onKillEvent:
+    m_PersistentCalls:
+      m_Calls: []
   gunBase: {fileID: 7631714179907377635}
 --- !u!1 &4389244681982779830
 GameObject:
@@ -5217,7 +5221,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.17974444, g: 0.8962264, b: 0.054957304, a: 1}
+      maxColor: {r: 0.8980392, g: 0.3177832, b: 0.054901943, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9827,7 +9831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4540113964012296950, guid: bf9ec8e20ba9c544dbe4712541334b46, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.63
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 4540113964012296950, guid: bf9ec8e20ba9c544dbe4712541334b46, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9862,8 +9866,16 @@ PrefabInstance:
       value: PFB_EnemyGunBase
       objectReference: {fileID: 0}
     - target: {fileID: 7631714180883480102, guid: bf9ec8e20ba9c544dbe4712541334b46, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631714180883480102, guid: bf9ec8e20ba9c544dbe4712541334b46, type: 3}
       propertyPath: timeBetweenShoot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631714180883480102, guid: bf9ec8e20ba9c544dbe4712541334b46, type: 3}
+      propertyPath: tagsToIgnore.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9ec8e20ba9c544dbe4712541334b46, type: 3}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CheckPointBase : MonoBehaviour
 {
+    public SFXType sfxType;
     public MeshRenderer meshRenderer;
     public int key = 01;
 
@@ -15,13 +16,18 @@ public class CheckPointBase : MonoBehaviour
         if (!checkPointActived && other.transform.tag == "Player")
         { 
             CheckPointCheck();
+
         }
     }
-
+    private void PlaySFX()
+    {
+        SFXPool.Instance.Play(sfxType);
+    }
     private void CheckPointCheck()
     {
         SaveCheckPoint();
         TurnItOn();
+        PlaySFX();
     }
 
     [NaughtyAttributes.Button]

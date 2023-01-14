@@ -1,7 +1,7 @@
 {
-    "lastLevel": 1,
-    "coins": 9.0,
-    "health": 1.0,
-    "lastcheckpoint": 0.0,
+    "lastLevel": 0,
+    "coins": 0.0,
+    "health": 0.0,
+    "lastcheckpoint": 0,
     "playerName": "New Save"
 }

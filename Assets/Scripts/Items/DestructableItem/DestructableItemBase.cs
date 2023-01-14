@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class DestructableItemBase : MonoBehaviour
 {
-    public SFXType sfxType;
+   
     public HealthBase healthBase;
 
     public float shakeDuration = .1f;
@@ -16,30 +16,25 @@ public class DestructableItemBase : MonoBehaviour
     public GameObject coinPrefab;
     public Transform dropPosition;
 
-    private void OnValidate()
-    {
-        if (healthBase == null) healthBase = GetComponent<HealthBase>();
-
-    }
+    
+   
 
     private void Awake()
     {
         OnValidate();
         healthBase.OnDamage += OnDamage;
+        
+    }
+    private void OnValidate()
+    {
+        if (healthBase == null) healthBase = GetComponent<HealthBase>();
 
     }
-
     private void OnDamage(HealthBase h)
     {
-        PlaySFX();
         transform.DOShakeScale(shakeDuration, Vector3.up/4, shakeForce);
         DropGroupOfCoins();
-
-    }
-
-    private void PlaySFX()
-    {
-        SFXPool.Instance.Play(sfxType);
+        
     }
 
     [NaughtyAttributes.Button]
@@ -64,6 +59,5 @@ public class DestructableItemBase : MonoBehaviour
             yield return new WaitForSeconds(.1f);
         }
     }
-
-
+  
 }

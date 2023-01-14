@@ -28,11 +28,11 @@ public class GunShootLimit : GunBase
             if(_currentShoots < maxShoot)
             {
                 Shoot();
+                PlaySFX();
                 _currentShoots++;
                 CheckRecharge();
                 UpdateUI();
                 yield return new WaitForSeconds(timeBetweenShoot);
-                PlaySFX();
             }
 
         }

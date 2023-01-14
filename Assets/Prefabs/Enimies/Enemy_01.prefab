@@ -4929,6 +4929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2895e01cd7d5644eaf2c738b726518a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxType: 4
   colliderEnemy: {fileID: 1100572222060562735}
   flashColor: {fileID: 1100572221164103156}
   particleSystemEnemy: {fileID: 1100572221627484665}
