@@ -28,7 +28,7 @@ public class SFXPool : Singleton<SFXPool>
 
     private void CreateAudioSoucerItem()
     {
-        GameObject go = new GameObject("SFX_Pool");
+        GameObject go = new GameObject("SFXPool");
         go.transform.SetParent(gameObject.transform);
         _audioSourceList.Add(go.AddComponent<AudioSource>());
     }

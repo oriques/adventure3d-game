@@ -9,6 +9,8 @@ public class AudioManager : Singleton<AudioManager>
     public List<SFXSetup> sfxSetups;
 
     public AudioSource musicSource;
+    public AudioSource sfxSource;
+
 
     public void PlayMusicByType (MusicType musicType)
     {
