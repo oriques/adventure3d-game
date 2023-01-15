@@ -12,8 +12,15 @@ public class UIFillUpdater : MonoBehaviour
     public float duration = .1f;
     public Ease ease = Ease.OutBack;
 
+    public UIFillUpdaterType fillUpdaterType;
+
     private Tween _currTween;
 
+    public enum UIFillUpdaterType
+    {
+        Gun,
+        Life
+    }
 
     private void OnValidate()
     {
